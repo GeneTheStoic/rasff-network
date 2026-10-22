@@ -1,0 +1,203 @@
+node,kind,name,strength,pagerank
+product:fruits and vegetables,product,fruits and vegetables,6855,0.11313539228739754
+"product:nuts, nut products and seeds",product,"nuts, nut products and seeds",3763,0.06282031062785728
+hazard:pesticide residues,hazard,pesticide residues,3484,0.050793171067767984
+hazard:pathogenic micro-organisms,hazard,pathogenic micro-organisms,3474,0.04873214942785614
+product:poultry meat and poultry meat products,product,poultry meat and poultry meat products,3154,0.04264356451169398
+product:herbs and spices,product,herbs and spices,2146,0.035861224860529214
+hazard:mycotoxins,hazard,mycotoxins,2323,0.03390404758398025
+product:cereals and bakery products,product,cereals and bakery products,1825,0.030132994766701234
+product:fish and fish products,product,fish and fish products,1351,0.02876115709015612
+origin:Türkiye,origin,Türkiye,1564,0.023355081383943235
+"product:dietetic foods, food supplements and fortified foods",product,"dietetic foods, food supplements and fortified foods",1244,0.02222758635983116
+product:meat and meat products (other than poultry),product,meat and meat products (other than poultry),1249,0.021757184412834096
+origin:Poland,origin,Poland,1007,0.013734473510473973
+origin:India,origin,India,870,0.013578151311815287
+product:other food product / mixed,product,other food product / mixed,696,0.01350768694776581
+"product:cocoa and cocoa preparations, coffee and tea",product,"cocoa and cocoa preparations, coffee and tea",689,0.012893687451100568
+product:confectionery,product,confectionery,567,0.011185779045616467
+hazard:heavy metals,hazard,heavy metals,627,0.011041623920033676
+origin:China,origin,China,611,0.010589423070042384
+origin:Spain,origin,Spain,583,0.01011549359696289
+product:bivalve molluscs and products thereof,product,bivalve molluscs and products thereof,620,0.010031780180486062
+product:crustaceans and products thereof,product,crustaceans and products thereof,514,0.00992091799237744
+product:prepared dishes and snacks,product,prepared dishes and snacks,427,0.009788191711736132
+hazard:composition,hazard,composition,529,0.009512990056451766
+product:milk and milk products,product,milk and milk products,572,0.009196081331945131
+origin:France,origin,France,567,0.009126990415235601
+origin:Italy,origin,Italy,522,0.008881746434693909
+origin:United States,origin,United States,526,0.008461314776748455
+origin:Netherlands,origin,Netherlands,504,0.008343885915778898
+origin:Egypt,origin,Egypt,504,0.008281563203318484
+product:fats and oils,product,fats and oils,330,0.008088659534484946
+hazard:food additives and flavourings,hazard,food additives and flavourings,358,0.006799848587697294
+origin:Germany,origin,Germany,375,0.006515795057761432
+hazard:allergens,hazard,allergens,340,0.006364148088204701
+hazard:natural toxins (other),hazard,natural toxins (other),354,0.006007739426856395
+hazard:environmental pollutants,hazard,environmental pollutants,306,0.005796086518085775
+origin:Belgium,origin,Belgium,299,0.0052536108315719065
+origin:Vietnam,origin,Vietnam,288,0.005251560153121199
+hazard:novel food,hazard,novel food,268,0.005081822226818375
+origin:Brazil,origin,Brazil,342,0.005053529164890639
+origin:Pakistan,origin,Pakistan,280,0.0047300621377354005
+hazard:biological contaminants,hazard,biological contaminants,239,0.004667219210034785
+origin:Ukraine,origin,Ukraine,230,0.0043447182071442705
+"product:soups, broths, sauces and condiments",product,"soups, broths, sauces and condiments",176,0.0042127730129072885
+origin:Argentina,origin,Argentina,241,0.0042071252758507
+hazard:industrial contaminants,hazard,industrial contaminants,192,0.004178462609371314
+hazard:residues of veterinary medicinal products,hazard,residues of veterinary medicinal products,189,0.004012815251750806
+product:non-alcoholic beverages,product,non-alcoholic beverages,177,0.003891041282437021
+origin:Thailand,origin,Thailand,176,0.003366602452997588
+origin:United Kingdom,origin,United Kingdom,161,0.0032573527555782695
+origin:Ecuador,origin,Ecuador,154,0.003218692812294784
+hazard:non-pathogenic micro-organisms,hazard,non-pathogenic micro-organisms,146,0.003148027277362794
+origin:Iran,origin,Iran,163,0.0030758787782310727
+origin:Czechia,origin,Czechia,130,0.0030496188794206305
+product:eggs and egg products,product,eggs and egg products,142,0.0030263400737586964
+origin:Romania,origin,Romania,166,0.002902121100437136
+origin:Nigeria,origin,Nigeria,146,0.0028750078570188033
+product:honey and royal jelly,product,honey and royal jelly,70,0.002766228160752884
+origin:Kenya,origin,Kenya,136,0.0026642240645240187
+origin:Peru,origin,Peru,119,0.0024509269209540756
+product:food additives and flavourings,product,food additives and flavourings,105,0.0024509075425240426
+origin:Sri Lanka,origin,Sri Lanka,100,0.0022923627725195085
+origin:Ireland,origin,Ireland,97,0.002198348127702282
+origin:Austria,origin,Austria,98,0.002194980616872112
+origin:Hungary,origin,Hungary,109,0.002170360766620419
+product:cephalopods and products thereof,product,cephalopods and products thereof,73,0.0021031774398332557
+origin:Lithuania,origin,Lithuania,90,0.002045969372176434
+origin:Indonesia,origin,Indonesia,80,0.0020077230778803488
+origin:Greece,origin,Greece,84,0.0020067313734109535
+hazard:foreign bodies,hazard,foreign bodies,79,0.0019869693807228763
+origin:Morocco,origin,Morocco,80,0.0019589253786718333
+hazard:parasitic infestation,hazard,parasitic infestation,68,0.001956407469755033
+hazard:genetically modified,hazard,genetically modified,56,0.0019036281152164884
+origin:Syria,origin,Syria,71,0.001840218698591375
+origin:Russia,origin,Russia,49,0.0018341445010251149
+hazard:not determined (other),hazard,not determined (other),69,0.0018320277844453233
+origin:Portugal,origin,Portugal,66,0.0018316895269385488
+origin:Denmark,origin,Denmark,59,0.0018280330573658791
+product:food contact materials,product,food contact materials,37,0.0018243294829092833
+origin:Colombia,origin,Colombia,72,0.0017923292810860369
+origin:Serbia,origin,Serbia,65,0.00177523552345114
+hazard:organoleptic aspects,hazard,organoleptic aspects,59,0.0017490064262439997
+origin:Uzbekistan,origin,Uzbekistan,68,0.0017093077438112146
+hazard:chemical contamination (other),hazard,chemical contamination (other),43,0.0016940433777000207
+origin:Bangladesh,origin,Bangladesh,63,0.0016883059136927779
+product:alcoholic beverages,product,alcoholic beverages,34,0.001671473048099081
+hazard:migration,hazard,migration,31,0.0016645890770610266
+origin:Bulgaria,origin,Bulgaria,59,0.0016573906167672125
+origin:Albania,origin,Albania,57,0.001591824321247881
+hazard:labelling absent/incomplete/incorrect,hazard,labelling absent/incomplete/incorrect,51,0.0015889733341366147
+origin:Slovakia,origin,Slovakia,49,0.0015384152484840513
+origin:Uganda,origin,Uganda,56,0.0015332959320653664
+origin:unknown origin,origin,unknown origin,50,0.0015046319787093152
+origin:Georgia,origin,Georgia,49,0.0014456669061555132
+product:ices and desserts,product,ices and desserts,45,0.0014102582930104423
+hazard:adulteration / fraud,hazard,adulteration / fraud,35,0.001392719794942136
+origin:Mexico,origin,Mexico,41,0.0013779284320400765
+origin:Latvia,origin,Latvia,39,0.0013415093191891732
+origin:Afghanistan,origin,Afghanistan,41,0.0013394068850729585
+origin:Ghana,origin,Ghana,35,0.0013284067498519833
+origin:South Korea,origin,South Korea,34,0.0013134150569459972
+origin:South Africa,origin,South Africa,37,0.0013114002154752911
+origin:Slovenia,origin,Slovenia,34,0.00130479006266187
+origin:Madagascar,origin,Madagascar,39,0.0013010508277672638
+origin:Sweden,origin,Sweden,35,0.0012923424766926248
+hazard:radiation,hazard,radiation,31,0.001249825315404545
+origin:Lebanon,origin,Lebanon,33,0.0012289068594947385
+origin:Switzerland,origin,Switzerland,31,0.0012237463162051972
+origin:United Arab Emirates,origin,United Arab Emirates,31,0.0011998492909662114
+origin:Tunisia,origin,Tunisia,26,0.0011872599827191005
+origin:Estonia,origin,Estonia,30,0.001171815813055294
+origin:Philippines,origin,Philippines,27,0.0011717218942721118
+origin:Norway,origin,Norway,24,0.001170937852246441
+origin:Republic of North Macedonia,origin,Republic of North Macedonia,29,0.0011626775558869961
+product:wine,product,wine,14,0.0011610634474510137
+origin:Bosnia and Herzegovina,origin,Bosnia and Herzegovina,24,0.00115851623251703
+origin:Bolivia,origin,Bolivia,29,0.0011554110900514787
+origin:Chile,origin,Chile,27,0.0011518769766809686
+origin:Cambodia,origin,Cambodia,29,0.0011505707935043023
+origin:Jordan,origin,Jordan,27,0.0011333160265094991
+product:water for human consumption (other),product,water for human consumption (other),17,0.001130634370705842
+origin:Senegal,origin,Senegal,24,0.001130294789122634
+origin:Paraguay,origin,Paraguay,27,0.0011284358617779172
+origin:Kazakhstan,origin,Kazakhstan,26,0.0011160178237574565
+product:natural mineral waters,product,natural mineral waters,21,0.001103037740827764
+origin:Venezuela,origin,Venezuela,22,0.0010974108484586198
+origin:Azerbaijan,origin,Azerbaijan,24,0.0010878954745432567
+origin:Nicaragua,origin,Nicaragua,24,0.001083069205002854
+origin:Finland,origin,Finland,19,0.001079095043939076
+origin:Croatia,origin,Croatia,19,0.001069557947932483
+origin:Canada,origin,Canada,21,0.0010594389809356227
+origin:Australia,origin,Australia,22,0.0010576636313839756
+origin:Japan,origin,Japan,19,0.0010507039913601492
+origin:Côte d'Ivoire,origin,Côte d'Ivoire,16,0.0010302401526475675
+origin:Malaysia,origin,Malaysia,14,0.0010229207269636805
+origin:Israel,origin,Israel,18,0.0010093948828171421
+origin:Moldova,origin,Moldova,13,0.000992609515257868
+origin:Uruguay,origin,Uruguay,16,0.0009825658413814364
+origin:Hong Kong,origin,Hong Kong,13,0.000976923072167137
+origin:Togo,origin,Togo,16,0.0009701336227395228
+origin:Kosovo,origin,Kosovo,13,0.0009693994540187114
+origin:Taiwan,origin,Taiwan,14,0.000968295173021768
+origin:Rwanda,origin,Rwanda,15,0.0009540053188285389
+origin:United Kingdom (Northern Ireland),origin,United Kingdom (Northern Ireland),13,0.0009309064816906175
+origin:Dominican Republic,origin,Dominican Republic,13,0.0009254349499807152
+origin:Burkina Faso,origin,Burkina Faso,12,0.0009173612360732317
+origin:Tanzania,origin,Tanzania,12,0.0009123787780646491
+origin:Cameroon,origin,Cameroon,11,0.0009023055648841735
+origin:Belarus,origin,Belarus,9,0.000895772063978058
+origin:Nepal,origin,Nepal,5,0.0008911240874884523
+origin:Guinea,origin,Guinea,7,0.0008815897518400404
+origin:New Zealand,origin,New Zealand,9,0.0008813337365235535
+origin:Oman,origin,Oman,7,0.0008684811019216472
+origin:Luxembourg,origin,Luxembourg,8,0.0008658630761178513
+origin:Myanmar,origin,Myanmar,8,0.0008652974605435051
+product:animal by-products,product,animal by-products,6,0.0008618642909053549
+hazard:feed additives,hazard,feed additives,9,0.0008596133661816681
+hazard:packaging defective / incorrect,hazard,packaging defective / incorrect,4,0.0008583878867924158
+origin:Iceland,origin,Iceland,6,0.0008511303612871276
+origin:Ethiopia,origin,Ethiopia,7,0.000846901256280338
+origin:Singapore,origin,Singapore,5,0.0008456915493605319
+origin:Algeria,origin,Algeria,7,0.0008454112796785441
+origin:Honduras,origin,Honduras,6,0.0008352399793698694
+product:gastropods,product,gastropods,6,0.0008339735883439749
+origin:Costa Rica,origin,Costa Rica,6,0.0008267282768649252
+origin:Iraq,origin,Iraq,5,0.0008253372473449441
+origin:Suriname,origin,Suriname,5,0.0008167696210287619
+hazard:gmo / novel food,hazard,gmo / novel food,3,0.0008167557554574743
+origin:Guatemala,origin,Guatemala,5,0.0008135387881993271
+origin:Burundi,origin,Burundi,5,0.0008127026069583948
+origin:Cyprus,origin,Cyprus,4,0.000803697989424323
+product:feed materials,product,feed materials,2,0.0008032909824221599
+origin:Chad,origin,Chad,4,0.0007993234153552613
+origin:Malawi,origin,Malawi,4,0.0007993234153552613
+origin:Tajikistan,origin,Tajikistan,4,0.0007988385566277136
+origin:Saudi Arabia,origin,Saudi Arabia,3,0.0007938410503815496
+origin:Malta,origin,Malta,3,0.0007929469148619173
+origin:Mauritania,origin,Mauritania,3,0.0007927852952860681
+origin:Mali,origin,Mali,3,0.0007851361258728816
+origin:Panama,origin,Panama,3,0.0007848128867211832
+origin:Mauritius,origin,Mauritius,3,0.000784651267145334
+origin:Benin,origin,Benin,3,0.000784651267145334
+origin:Yemen,origin,Yemen,2,0.0007787596253795376
+hazard:tses,hazard,tses,2,0.0007768601016607863
+origin:Namibia,origin,Namibia,2,0.0007754708835323171
+product:live animals,product,live animals,2,0.0007744431758221385
+origin:Sudan,origin,Sudan,2,0.0007732552150133339
+origin:Guyana,origin,Guyana,2,0.0007706377711298616
+origin:Armenia,origin,Armenia,2,0.0007706255972388036
+product:plant protection products,product,plant protection products,2,0.0007689388909646243
+origin:West Bank and Gaza Strip,origin,West Bank and Gaza Strip,1,0.0007620561595311095
+origin:Seychelles,origin,Seychelles,1,0.0007606669414026402
+origin:Réunion,origin,Réunion,1,0.0007606669414026402
+origin:Botswana,origin,Botswana,1,0.0007573781995554196
+origin:Papua New Guinea,origin,Papua New Guinea,1,0.0007567755885889654
+origin:Zimbabwe,origin,Zimbabwe,1,0.0007567755885889654
+origin:Niger,origin,Niger,1,0.0007567615469081223
+origin:Kyrgyzstan,origin,Kyrgyzstan,1,0.0007567615469081223
+origin:Democratic Republic of the Congo,origin,Democratic Republic of the Congo,1,0.0007565999273322731
+origin:Laos,origin,Laos,1,0.0007565999273322731
+origin:Angola,origin,Angola,1,0.0007565999273322731
+origin:Libya,origin,Libya,1,0.0007565999273322731

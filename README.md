@@ -31,6 +31,28 @@ Which products and hazards are most central in EU RASFF notifications, and are t
 ![Network](figures/fig1_network.png)
 ![Centrality with uncertainty](figures/fig2_centrality_uncertainty.png)
 
+## Which links are stronger than volume alone predicts?
+
+Raw counts mix product-specific risk with sheer volume: an origin or product that is notified often will have many links regardless of risk. Step 5 separates the two with a null model and validates the result out of sample.
+
+- **Null model per layer.** For each origin–product and product–hazard link, a hypergeometric test asks whether the count exceeds what the two margins imply (statistically validated networks, Tumminello et al., 2011).
+- **Coupling between layers.** For each origin–product–hazard triple, the null is that origin and hazard are independent given the product, so the layers interact only through the product node. A rejected null is an origin-specific hazard profile that neither layer shows alone.
+- **Multiple testing.** Benjamini–Hochberg false discovery rate of 1% across all links.
+- **Out-of-sample check.** Links are validated on 2023–2025 and tested on 2026 notifications, with expected counts recomputed from 2026 margins.
+
+| Layer | Links | Validated (2023–2025) | Over-represented in 2026: validated | Over-represented in 2026: not validated |
+|---|---|---|---|---|
+| Origin–product | 970 | 135 | 86% (observed/expected 3.51) | 30% (0.66) |
+| Product–hazard | 350 | 77 | 82% (2.92) | 25% (0.48) |
+| Origin–product–hazard | 2,341 | 144 | 75% (1.70) | 32% (0.94) |
+
+- **Some of the largest links are explained by volume.** Türkiye – nuts (146 notifications, 0.82 of expected), India – fruits and vegetables (111, 0.61) and fruits and vegetables – mycotoxins (498, 1.11) are not over-represented once margins are accounted for.
+- **Smaller links carry specific signals.** Ecuador – crustaceans (82 notifications, 33 times expected), Pakistan – cereals (194, 11 times), fish – parasitic infestation (43, 19 times) and cephalopods – heavy metals (24, 18 times).
+- **Layer coupling changes the reading of the largest node.** Türkiye – fruits and vegetables – pesticide residues is the largest triple (387) but sits below expectation (0.72), while Türkiye – fruits and vegetables – mycotoxins is 2.6 times expected: Türkiye's fruit and vegetable notifications are more about mycotoxins than the product layer alone suggests.
+- **Implication for monitoring.** Ranking by raw counts and ranking by deviation from a null model answer different questions; validated links are the ones that persist out of sample.
+
+![Validated links out of sample](figures/fig3_validated_links_out_of_sample.png)
+
 ## Limitations
 
 - RASFF notifications reflect **what is inspected and reported**, not the true prevalence of contamination. Central nodes partly reflect inspection intensity (for example, reinforced border controls on specific products and origins).
@@ -47,6 +69,9 @@ python step1_load_clean.py
 python step2_network.py
 python step3_uncertainty.py      # about 5–10 minutes (1,000 bootstrap resamples)
 python step4_figures.py
+python step5_validated_links.py  # null model, false discovery rate and out-of-sample check
 ```
+
+Reference: Tumminello, M., Miccichè, S., Lillo, F., Piilo, J., and Mantegna, R. N. (2011). Statistically validated networks in bipartite complex systems. *PLoS ONE*, 6(3), e17994.
 
 Author: Eugenio Guilarte Homayden

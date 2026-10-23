@@ -2,7 +2,7 @@
 
 **Technical report (5 pages, PDF):** [report/RASFF_Technical_Report_Guilarte_Homayden.pdf](report/RASFF_Technical_Report_Guilarte_Homayden.pdf)
 
-A small, reproducible study of which **origin countries, product categories and hazards** sit at the centre of EU food-safety notifications, and **how stable those rankings are** under resampling and over time.
+A small, reproducible study of which **origin countries, product categories and hazards** sit at the center of EU food-safety notifications, and **how stable those rankings are** under resampling and over time.
 
 ## Question
 
@@ -11,7 +11,7 @@ Which products and hazards are most central in EU RASFF notifications, and are t
 ## Data
 
 - **Source:** EU Rapid Alert System for Food and Feed, public [RASFF Window](https://webgate.ec.europa.eu/rasff-window/screen/search), exported on 22 October 2026.
-- **Sample:** 19,801 notifications from 2 January 2023 to 21 October 2026. The analysis keeps the **13,068 food notifications with at least one coded hazard** (feed and food-contact notifications, and labelling-only cases without a coded hazard, are excluded).
+- **Sample:** 19,801 notifications from 2 January 2023 to 21 October 2026. The analysis keeps the **13,068 food notifications with at least one coded hazard** (feed and food-contact notifications, and labeling-only cases without a coded hazard, are excluded).
 - **Coverage:** 141 origin countries, 33 product categories, 28 hazard classes (931 distinct hazards).
 - **Cleaning:** the `hazards` field lists one or more hazards per notification as `name - {class}`; it is parsed into separate hazard records. Notifications with several origin countries are split by country.
 

@@ -1,5 +1,7 @@
 # Network analysis of EU food-safety alerts (RASFF)
 
+**Technical report (5 pages, PDF):** [report/RASFF_Technical_Report_Guilarte_Homayden.pdf](report/RASFF_Technical_Report_Guilarte_Homayden.pdf)
+
 A small, reproducible study of which **origin countries, product categories and hazards** sit at the centre of EU food-safety notifications, and **how stable those rankings are** under resampling and over time.
 
 ## Question

@@ -57,7 +57,7 @@ Raw counts mix product-specific risk with sheer volume: an origin or product tha
 
 ## Does the way hazards are categorized matter for decisions? (step 6)
 
-Risk categorizations are a modelling choice. Following the approach of Stevens, Almeida et al. (2025), who compare diet categorizations for predicting disease flares with the sparse group lasso, step 6 asks whether coarse or fine hazard categories better predict which notifications receive a **"serious" risk decision** (57% of the 13,068 notifications).
+Risk categorizations are a modeling choice. Following the approach of Stevens, Almeida et al. (2025), who compare diet categorizations for predicting disease flares with the sparse group lasso, step 6 asks whether coarse or fine hazard categories better predict which notifications receive a **"serious" risk decision** (57% of the 13,068 notifications).
 
 - **Predictors.** Product category (33), origin country (top 25 plus "other"), and hazards at one of two levels: the 28 hazard classes, or 118 named hazards (at least 20 notifications in 2023–2025, spelling variants merged) plus one "other hazards in this class" indicator per class.
 - **Models.** Penalized logistic regression: lasso on classes; lasso on names; group lasso on names grouped by class; and sparse group lasso (Simon et al., 2013), which selects classes and, inside each selected class, the hazards that matter. Solver: proximal gradient with FISTA, written for this project (`src/sgl.py`) and checked against scikit-learn on the unpenalized fit.

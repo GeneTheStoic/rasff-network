@@ -1,0 +1,131 @@
+  M1 class level, lasso: AUC 0.753, selected 54 of 87
+  M2 name level, lasso: AUC 0.793, selected 160 of 205
+  M3 name level, group lasso: AUC 0.793, selected 180 of 205
+  M4 name level, sparse group lasso: AUC 0.794, selected 174 of 205
+
+Out-of-sample comparison (trained 2023-2025, tested on 2026):
+                            model  features  selected  hazard_features_selected  test_auc  test_logloss  auc_diff_vs_M1  diff_ci05  diff_ci95
+            M1 class level, lasso        87        54                        18     0.753         0.590             NaN        NaN        NaN
+             M2 name level, lasso       205       160                       118     0.793         0.554           0.041      0.030      0.051
+       M3 name level, group lasso       205       180                       139     0.793         0.553           0.040      0.030      0.049
+M4 name level, sparse group lasso       205       174                       132     0.794         0.553           0.041      0.031      0.051
+
+Sparse group lasso: hazard classes and hazards selected inside each class:
+                                           hazards  selected
+group                                                       
+pesticide residues                              61        57
+pathogenic micro-organisms                      14        13
+composition                                      7         7
+heavy metals                                     6         6
+mycotoxins                                       6         6
+biological contaminants                          5         5
+environmental pollutants                         5         5
+natural toxins (other)                           4         4
+allergens                                        4         4
+novel food                                       4         4
+food additives and flavourings                   5         4
+industrial contaminants                          4         3
+residues of veterinary medicinal products        3         3
+parasitic infestation                            2         2
+genetically modified                             2         2
+adulteration / fraud                             2         1
+chemical contamination (other)                   1         1
+foreign bodies                                   1         1
+migration                                        1         1
+non-pathogenic micro-organisms                   1         1
+organoleptic aspects                             1         1
+radiation                                        1         1
+
+pathogenic micro-organisms:
+                                   feature   coef
+               name_salmonella enteritidis  2.552
+               name_salmonella typhimurium  2.532
+                           name_salmonella  1.497
+               name_listeria monocytogenes  1.425
+name_escherichia coli shigatoxin-producing  1.104
+                     name_escherichia coli  0.513
+          other_pathogenic micro-organisms  0.494
+                      name_vibrio cholerae  0.393
+                      name_bacillus cereus  0.283
+                    name_vibrio vulnificus  0.016
+                   name_salmonella newport  0.001
+              name_vibrio parahaemolyticus -0.955
+                            name_norovirus -1.582
+
+mycotoxins:
+             feature   coef
+      name_aflatoxin  1.856
+   name_aflatoxin b1  1.776
+     name_aflatoxins  1.752
+   name_ochratoxin a  0.941
+name_aflatoxin total  0.860
+    other_mycotoxins -0.115
+
+pesticide residues:
+                                        feature   coef
+                               name_formetanate  1.214
+             name_oxamyl unauthorised substance  1.210
+                                name_carbofuran  1.194
+                                  name_ethephon  1.185
+                                name_prochloraz  0.988
+                              name_cypermethrin  0.937
+                                  name_methomyl  0.891
+      name_methamidophos unauthorised substance  0.757
+                        name_pesticide residues  0.650
+           name_chlorate unauthorised substance  0.642
+                            name_ethylene oxide  0.621
+                                name_flonicamid  0.560
+                              name_tebuconazole  0.521
+                              name_azoxystrobin  0.407
+                               name_acetamiprid  0.375
+        name_carbendazim unauthorised substance  0.373
+                               name_carbendazim  0.362
+                           name_2-chloroethanol  0.326
+                            name_pyraclostrobin  0.279
+       name_chlorpyrifos unauthorised substance  0.273
+                                   name_linuron  0.255
+                        name_lambda-cyhalothrin  0.223
+           name_fipronil unauthorised substance  0.207
+                              name_dimethomorph  0.127
+                             name_fenpropathrin  0.124
+                                 name_omethoate  0.122
+                              name_clothianidin  0.119
+                                  name_imazalil  0.098
+                              name_chlorfenapyr  0.063
+                             name_anthraquinone  0.034
+        name_dinotefuran unauthorised substance  0.006
+                                name_dimethoate -0.007
+                                 name_lufenuron -0.045
+                             name_propiconazole -0.058
+                        name_thiophanate-methyl -0.083
+       name_tricyclazole unauthorised substance -0.105
+                              name_chlorpyrifos -0.115
+                           name_kresoxim-methyl -0.179
+       name_hexaconazole unauthorised substance -0.188
+                                 name_metalaxyl -0.210
+                                    name_ethion -0.212
+                            name_chlorothalonil -0.227
+                                name_propargite -0.231
+                       other_pesticide residues -0.257
+           name_acephate unauthorised substance -0.272
+                                name_buprofezin -0.278
+                              name_imidacloprid -0.282
+                                name_indoxacarb -0.306
+name_chlorpyrifos-methyl unauthorised substance -0.313
+         name_permethrin unauthorised substance -0.365
+                               name_tolfenpyrad -0.382
+                          name_dithiocarbamates -0.383
+         name_profenofos unauthorised substance -0.420
+                               name_dinotefuran -0.472
+       name_chlorfenapyr unauthorised substance -0.509
+      name_picoxystrobin unauthorised substance -0.663
+                              name_thiamethoxam -0.983
+
+heavy metals:
+               feature   coef
+          name_mercury  1.764
+name_lead high content  1.008
+          name_cadmium  0.938
+          name_arsenic  0.521
+             name_lead  0.463
+    other_heavy metals -0.182

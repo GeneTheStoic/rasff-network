@@ -1,0 +1,206 @@
+feature,group,coef
+product_alcoholic beverages,product_alcoholic beverages,0.0
+product_animal by-products,product_animal by-products,0.0
+product_bivalve molluscs and products thereof,product_bivalve molluscs and products thereof,0.7651788589542551
+product_cephalopods and products thereof,product_cephalopods and products thereof,1.1901177766343107
+product_cereals and bakery products,product_cereals and bakery products,-0.2851139365764315
+"product_cocoa and cocoa preparations, coffee and tea","product_cocoa and cocoa preparations, coffee and tea",-0.20065253100269467
+product_confectionery,product_confectionery,0.32692074384841374
+product_crustaceans and products thereof,product_crustaceans and products thereof,0.0
+"product_dietetic foods, food supplements and fortified foods","product_dietetic foods, food supplements and fortified foods",-0.23336725852679516
+product_eggs and egg products,product_eggs and egg products,-0.5988346821883447
+product_fats and oils,product_fats and oils,0.0
+product_feed materials,product_feed materials,-0.0
+product_fish and fish products,product_fish and fish products,0.4467780569576953
+product_food additives and flavourings,product_food additives and flavourings,-0.058037083094781235
+product_food contact materials,product_food contact materials,-0.0
+product_fruits and vegetables,product_fruits and vegetables,0.16726214570556605
+product_gastropods,product_gastropods,-0.0
+product_herbs and spices,product_herbs and spices,0.22801617235978314
+product_honey and royal jelly,product_honey and royal jelly,-0.0
+product_ices and desserts,product_ices and desserts,0.0
+product_live animals,product_live animals,0.0
+product_meat and meat products (other than poultry),product_meat and meat products (other than poultry),-0.19518599897394207
+product_milk and milk products,product_milk and milk products,0.47287184127294657
+product_natural mineral waters,product_natural mineral waters,-0.0
+product_non-alcoholic beverages,product_non-alcoholic beverages,-0.1658235237069675
+"product_nuts, nut products and seeds","product_nuts, nut products and seeds",0.525738822594668
+product_other food product / mixed,product_other food product / mixed,0.01473431394693195
+product_plant protection products,product_plant protection products,-0.0
+product_poultry meat and poultry meat products,product_poultry meat and poultry meat products,-0.4216931575477484
+product_prepared dishes and snacks,product_prepared dishes and snacks,-0.24993425002312142
+"product_soups, broths, sauces and condiments","product_soups, broths, sauces and condiments",0.0
+product_water for human consumption (other),product_water for human consumption (other),0.0
+product_wine,product_wine,0.0
+origin_Argentina,origin_Argentina,-0.32282763830697403
+origin_Belgium,origin_Belgium,0.3641523610607039
+origin_Brazil,origin_Brazil,0.468548369840458
+origin_China,origin_China,-0.0
+origin_Czechia,origin_Czechia,0.21089860877600777
+origin_Ecuador,origin_Ecuador,-0.589010868670597
+origin_Egypt,origin_Egypt,-0.10643583806860148
+origin_France,origin_France,0.6385726692762519
+origin_Germany,origin_Germany,0.1524963037767558
+origin_India,origin_India,-0.045082199576483156
+origin_Iran,origin_Iran,0.06369474917178722
+origin_Italy,origin_Italy,0.49859512331716394
+origin_Kenya,origin_Kenya,-1.151823023409011
+origin_Netherlands,origin_Netherlands,0.29739753395674723
+origin_Nigeria,origin_Nigeria,1.0604364125035295
+origin_Pakistan,origin_Pakistan,-0.5029349920408206
+origin_Poland,origin_Poland,-0.3994699682282387
+origin_Spain,origin_Spain,0.3074814522355798
+origin_Sri Lanka,origin_Sri Lanka,0.0
+origin_Thailand,origin_Thailand,0.2565047434740755
+origin_Türkiye,origin_Türkiye,0.7889447579610054
+origin_Ukraine,origin_Ukraine,-0.9609162989402332
+origin_United Kingdom,origin_United Kingdom,-0.29412372445013646
+origin_United States,origin_United States,-0.15626584106607788
+origin_Vietnam,origin_Vietnam,-0.28156830504872865
+origin_other,origin_other,-0.08551750668551153
+name_2-chloroethanol,pesticide residues,0.32640583208876767
+"name_3-monochlor-1,2-propanediol (3-mcpd)",industrial contaminants,0.6365585463962756
+name_acephate unauthorised substance,pesticide residues,-0.27208233015413913
+name_acetamiprid,pesticide residues,0.3748382430649665
+name_acrylamide high level,industrial contaminants,-0.5114365121383883
+name_aflatoxin,mycotoxins,1.8564068403733303
+name_aflatoxin b1,mycotoxins,1.776223805260082
+name_aflatoxin total,mycotoxins,0.8597566359560223
+name_aflatoxins,mycotoxins,1.7515473982946028
+name_anisakis parasitic infestation with,parasitic infestation,-2.8033025385674293
+name_anthraquinone,pesticide residues,0.03404347173887831
+name_arsenic,heavy metals,0.5206744979133986
+name_atropine,natural toxins (other),0.4955640258467255
+name_azoxystrobin,pesticide residues,0.40736935085335907
+name_bacillus cereus,pathogenic micro-organisms,0.28289311204564765
+name_benzo(a)pyrene,environmental pollutants,0.07770281993620166
+name_bifenthrin,pesticide residues,-0.0
+name_boscalid,pesticide residues,-0.0
+name_buprofezin,pesticide residues,-0.27808385898028776
+name_cadmium,heavy metals,0.9382001283233565
+name_cannabidiol (cbd) unauthorised novel food ingredient,novel food,-1.151641371691096
+name_carbendazim,pesticide residues,0.36194233683927335
+name_carbendazim unauthorised substance,pesticide residues,0.37263748459553014
+name_carbofuran,pesticide residues,1.1940477593454957
+name_chlorate unauthorised substance,pesticide residues,0.64184830717688
+name_chlorfenapyr,pesticide residues,0.0634518455738121
+name_chlorfenapyr unauthorised substance,pesticide residues,-0.5092317565045601
+name_chlorothalonil,pesticide residues,-0.22696853329080965
+name_chlorpyrifos,pesticide residues,-0.11477777435573418
+name_chlorpyrifos unauthorised substance,pesticide residues,0.27254611634522274
+name_chlorpyrifos-methyl,pesticide residues,-0.0
+name_chlorpyrifos-methyl unauthorised substance,pesticide residues,-0.312935250059228
+name_clothianidin,pesticide residues,0.11903274219615265
+name_colour e 171 - titanium dioxide unauthorised use,food additives and flavourings,-0.7666893435351597
+name_cyanide high content,biological contaminants,-0.5572908978069395
+name_cyanide too high content,biological contaminants,0.4306129794449709
+name_cypermethrin,pesticide residues,0.9369860863401797
+name_difenoconazole,pesticide residues,-0.0
+name_dimethoate,pesticide residues,-0.007015490808173113
+name_dimethomorph,pesticide residues,0.12744808237452243
+name_dinotefuran,pesticide residues,-0.47210036446502185
+name_dinotefuran unauthorised substance,pesticide residues,0.005651013579073132
+name_dithiocarbamates,pesticide residues,-0.3826006034238073
+name_e 210 - benzoic acid unauthorised,food additives and flavourings,-1.1283233484622834
+name_e220- sulfur dioxide too high content,food additives and flavourings,-0.0
+name_e220- sulfur dioxide undeclared,allergens,1.2665021068356386
+name_escherichia coli,pathogenic micro-organisms,0.5131232519914686
+name_escherichia coli shigatoxin-producing,pathogenic micro-organisms,1.104235919247646
+name_ethephon,pesticide residues,1.1849414575396453
+name_ethion,pesticide residues,-0.21229136906015514
+name_ethylene oxide,pesticide residues,0.6208505123186048
+name_fenpropathrin,pesticide residues,0.12359207528387621
+name_fipronil unauthorised substance,pesticide residues,0.20652952887118103
+name_flonicamid,pesticide residues,0.5600712290153328
+name_formetanate,pesticide residues,1.213676861961433
+name_genetically modified unauthorised,genetically modified,-1.5085395787574123
+name_gluten undeclared,allergens,0.8238295235325102
+name_glycidyl esters,industrial contaminants,0.0
+name_hexaconazole unauthorised substance,pesticide residues,-0.18835547196075716
+name_histamine,biological contaminants,1.9665004401215371
+name_imazalil,pesticide residues,0.09773483397151037
+name_imidacloprid,pesticide residues,-0.2820377342798058
+name_import illegal,adulteration / fraud,-0.9345503298615829
+name_indoxacarb,pesticide residues,-0.3055472406517342
+name_iodine high content,composition,1.5448196685970783
+name_kresoxim-methyl,pesticide residues,-0.17880739772272153
+name_lambda-cyhalothrin,pesticide residues,0.22283537886805257
+name_lead,heavy metals,0.46349090384725694
+name_lead high content,heavy metals,1.0083839028948074
+name_leucomalachite green prohibited substance,residues of veterinary medicinal products,0.9887774209899944
+name_linuron,pesticide residues,0.254889884005821
+name_listeria monocytogenes,pathogenic micro-organisms,1.4251968815309783
+name_lufenuron,pesticide residues,-0.04528026502022418
+name_mercury,heavy metals,1.7640074896267584
+name_metalaxyl,pesticide residues,-0.21021707372945034
+name_methamidophos unauthorised substance,pesticide residues,0.7573840189928271
+name_methomyl,pesticide residues,0.8905299743943728
+name_mineral oil,environmental pollutants,-0.11306255501244447
+name_mineral oil aromatic hydrocarbons (moah),environmental pollutants,0.1944258526993445
+name_nitrofuran (metabolite) furazolidone (aoz) prohibited substance,residues of veterinary medicinal products,2.235662415602257
+name_norovirus,pathogenic micro-organisms,-1.5820371541176845
+name_novel food ingredient unauthorised,novel food,-1.382143520301968
+name_novel food unauthorised,novel food,-0.6219483340290183
+name_ochratoxin a,mycotoxins,0.9410548733778569
+name_omethoate,pesticide residues,0.12236348600220108
+name_oxamyl unauthorised substance,pesticide residues,1.209589443924081
+name_permethrin unauthorised substance,pesticide residues,-0.3652346474758416
+name_pesticide residues,pesticide residues,0.65032437025689
+name_picoxystrobin unauthorised substance,pesticide residues,-0.6633006740761893
+name_polycyclic aromatic hydrocarbons sum of,environmental pollutants,0.42087313255414727
+name_prochloraz,pesticide residues,0.9877022061800362
+name_profenofos unauthorised substance,pesticide residues,-0.4196219794918791
+name_propargite,pesticide residues,-0.2312481766211953
+name_propiconazole,pesticide residues,-0.058395068233524555
+name_pyraclostrobin,pesticide residues,0.2792536558505351
+name_pyrrolizidine alkaloids,natural toxins (other),0.6369196636783846
+name_salmonella,pathogenic micro-organisms,1.497318806497914
+name_salmonella enteritidis,pathogenic micro-organisms,2.5520620017264615
+name_salmonella infantis,pathogenic micro-organisms,-0.0
+name_salmonella newport,pathogenic micro-organisms,0.0013048107576065242
+name_salmonella typhimurium,pathogenic micro-organisms,2.5318496813171523
+name_scopolamine,natural toxins (other),1.3958349491938338
+name_sibutramine unauthorised substance,composition,0.6981346183562053
+name_sildenafil unauthorised substance,composition,1.8723452982633686
+name_sudan 4 unauthorised colour,composition,1.2832053048217456
+name_sulphite too high content,food additives and flavourings,-0.6716156772309728
+name_sulphite undeclared,allergens,1.4964185718540175
+name_tadalafil unauthorised substance,composition,1.2498094650038476
+name_tebuconazole,pesticide residues,0.5213920683779986
+name_tetrahydrocanabinol (thc),biological contaminants,1.637566683340221
+name_thiamethoxam,pesticide residues,-0.9828417478052798
+name_thiophanate-methyl,pesticide residues,-0.08299476414488709
+name_tolfenpyrad,pesticide residues,-0.38226268498352456
+name_trans fatty acids too high content,composition,-1.640749272077157
+name_tricyclazole unauthorised substance,pesticide residues,-0.10530761069088221
+name_vibrio cholerae,pathogenic micro-organisms,0.3930590807044809
+name_vibrio parahaemolyticus,pathogenic micro-organisms,-0.9547995318210739
+name_vibrio vulnificus,pathogenic micro-organisms,0.015800159898733474
+other_adulteration / fraud,adulteration / fraud,0.0
+other_allergens,allergens,2.052026139038203
+other_biological contaminants,biological contaminants,0.15564536609845103
+other_chemical contamination (other),chemical contamination (other),0.19750930926538873
+other_composition,composition,0.17979639603800038
+other_environmental pollutants,environmental pollutants,-0.06506662104085933
+other_feed additives,feed additives,-0.0
+other_food additives and flavourings,food additives and flavourings,-1.3839870716223694
+other_foreign bodies,foreign bodies,0.09743175943589893
+other_genetically modified,genetically modified,-0.27364109465723374
+other_gmo / novel food,gmo / novel food,0.0
+other_heavy metals,heavy metals,-0.18182201078792792
+other_industrial contaminants,industrial contaminants,-0.44644995155960326
+other_labelling absent/incomplete/incorrect,labelling absent/incomplete/incorrect,-0.0
+other_migration,migration,-0.10095307699078132
+other_mycotoxins,mycotoxins,-0.11500385693281655
+other_natural toxins (other),natural toxins (other),1.5317538106070951
+other_non-pathogenic micro-organisms,non-pathogenic micro-organisms,-2.21371706051494
+other_not determined (other),not determined (other),0.0
+other_novel food,novel food,-0.0878022686889832
+other_organoleptic aspects,organoleptic aspects,-2.1745915433246483
+other_packaging defective / incorrect,packaging defective / incorrect,-0.0
+other_parasitic infestation,parasitic infestation,-1.2423608509589978
+other_pathogenic micro-organisms,pathogenic micro-organisms,0.4941121392153924
+other_pesticide residues,pesticide residues,-0.25710567466298423
+other_radiation,radiation,-1.5914101873522961
+other_residues of veterinary medicinal products,residues of veterinary medicinal products,-0.1408475216797936
+other_tses,tses,-0.0

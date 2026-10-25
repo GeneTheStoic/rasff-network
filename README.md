@@ -1,6 +1,6 @@
 # Network analysis of EU food-safety alerts (RASFF)
 
-**Technical report (5 pages, PDF):** [report/RASFF_Technical_Report_Guilarte_Homayden.pdf](report/RASFF_Technical_Report_Guilarte_Homayden.pdf)
+**Technical report (7 pages, PDF):** [report/RASFF_Technical_Report_Guilarte_Homayden.pdf](report/RASFF_Technical_Report_Guilarte_Homayden.pdf)
 
 A small, reproducible study of which **origin countries, product categories and hazards** sit at the center of EU food-safety notifications, and **how stable those rankings are** under resampling and over time. It then tests which links exceed what volume alone predicts (step 5), compares hazard categorizations for predicting regulatory risk decisions with the sparse group lasso (step 6), and studies pyrrolizidine alkaloids as a case (step 7).
 

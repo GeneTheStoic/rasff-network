@@ -1,0 +1,186 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[a4paper,margin=2.5cm]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{microtype}
+\usepackage[hidelinks]{hyperref}
+\usepackage{setspace}
+\setstretch{1.08}
+\setlength{\parskip}{0.35em}
+\title{Separating Risk Signal from Volume in EU Food-Safety Alerts: A Two-Layer Network Analysis of RASFF Notifications with Null-Model and Out-of-Sample Validation}
+\author{Eugenio Guilarte Homayden\thanks{University of Macerata. E-mail: \texttt{euge.guilarte@gmail.com}. Code, data, and results: \url{https://github.com/GeneTheStoic/rasff-network}.}}
+\date{Technical report, October 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+\noindent Food-safety alert systems are used to set monitoring priorities, but raw notification counts mix product-specific risk with trade volume, inspection intensity, and sampling noise. I build a two-layer network (origin country to product category, product category to hazard class) from 13,068 food notifications in the EU Rapid Alert System for Food and Feed (RASFF) between January 2023 and October 2026, and ask which nodes are central, how stable their rankings are, which links are stronger than volume alone predicts, and whether the level at which hazards are categorized matters for regulatory decisions. Centrality rankings are stable across years (Spearman $\rho$ = 0.90–0.94) and under 1,000 bootstrap resamples at the top, but not near the top-10 cut-off. Testing every link against a fixed-margin null model with false discovery rate control, and validating out of sample, separates the two readings of the data: 86\% of origin–product links validated on 2023–2025 remain over-represented in 2026, against 30\% of the other links. A test of coupling between layers shows that the largest node, Türkiye's fruit and vegetable notifications, is driven by mycotoxins (2.6 times expected), while pesticide residues sit below expectation (0.72 times expected), a result that holds in 2026. A comparison of hazard categorizations with the lasso, group lasso, and sparse group lasso shows that named hazards predict which notifications are classified as serious better than hazard classes out of sample (AUC 0.794 against 0.753 on 2026), because regulators treat hazards within the same class very differently: \emph{Salmonella} Enteritidis notifications are classified as serious in 83\% of cases and \emph{Salmonella} Infantis in 30\%, consistent with the EU microbiological criterion for fresh poultry meat. A case study of pyrrolizidine alkaloids, regulated since 2022, shows that Belgium notifies them 2.4 times more often than its overall volume implies.
+
+\medskip
+\noindent\raggedright\textbf{Keywords:} food safety; RASFF; multilayer networks; null models; sparse group lasso; risk prioritization\par
+\end{abstract}
+\section{Motivation}
+
+Risk managers read alert data as evidence of where to look next. Two problems make that reading fragile. First, counts and centrality measure how often a node appears, which depends on how much is traded and how much is inspected, not only on how risky it is. Second, rankings built from a few thousand notifications carry sampling uncertainty that is rarely reported. A network view is useful here because the same product connects the countries that ship it to the hazards found in it, so the question of where risk sits becomes a question about the structure of links and not only about the size of nodes.
+
+This report addresses three questions. \textbf{Q1:} which origin countries, product categories, and hazard classes are central in EU notifications? \textbf{Q2:} how stable are those rankings under resampling and over time? \textbf{Q3:} which links, and which combinations across layers, are stronger than the volume of their endpoints predicts, and do they persist out of sample? \textbf{Q4:} does the level at which hazards are categorized (classes or named hazards) change how well the data predict regulatory risk decisions? Section 4.6 applies the framework to one regulated hazard, pyrrolizidine alkaloids.
+
+\section{Data}
+
+The data are the public RASFF Window export of 22 October 2026: 19,801 notifications from 2 January 2023 to 21 October 2026. I keep the 13,068 food notifications with at least one coded hazard (2,998 in 2023; 3,519 in 2024; 3,549 in 2025; 3,002 in 2026 up to 21 October), excluding feed, food-contact materials, and cases without a coded hazard. The hazard field lists one or more hazards per notification in the form \emph{name - \{class\}}; it is parsed into separate records, and notifications with several origin countries are split by country. The sample covers 141 origin countries, 33 product categories, 28 hazard classes, and 931 distinct hazards; 57.3\% of notifications carry a \emph{serious} risk decision.
+
+\section{Methods}
+
+\subsection{Network construction}
+
+Layer 1 links origin countries to product categories and layer 2 links product categories to hazard classes. Edge weights count notifications, with each notification counted once per origin in layer 1 and once per hazard class in layer 2. Product categories are shared by both layers, which connects them into a 202-node network with 1,443 weighted edges.
+
+\subsection{Centrality and communities}
+
+I compute weighted degree (strength) and PageRank on the combined network (Brin and Page, 1998). Communities of products are found with the Louvain method (Blondel et al., 2008) on the weighted projection of layer 2, in which two products are linked when they share hazards.
+
+\subsection{Uncertainty and temporal stability}
+
+The bootstrap resamples notifications with replacement (1,000 replications), so that every origin and hazard record of a notification moves together, rebuilds the network, and recomputes PageRank (Efron and Tibshirani, 1993). For each node I report the median, a 90\% percentile interval, and the share of replications in which it ranks in the top 10 of its type. Temporal stability is the Spearman correlation of PageRank between consecutive years.
+
+\subsection{Null models, false discovery rate, and out-of-sample validation}
+
+\textbf{Links within a layer.} For a link between $a$ and $b$, let $N$ be the number of notification records in the layer and $n$($a$) and $n$($b$) the margins. If the two margins are independent, the link count follows a hypergeometric distribution with expected value $n(a)\,n(b)/N$, and the p-value is the probability of a count at least as large as the one observed. This is the statistically validated network approach of Tumminello et al. (2011).
+
+\textbf{Coupling between layers.} For a triple of origin $o$, product $p$, and hazard $h$, the null hypothesis is that origin and hazard are independent given the product: within product $p$, the count follows a hypergeometric distribution with population $n$($p$) and margins $n$($o$, $p$) and $n$($p$, $h$), so the expected count is $n(o,p)\,n(p,h)/n(p)$. Under this null the two layers interact only through the shared product node; a rejection is an origin-specific hazard profile that neither layer shows on its own.
+
+\textbf{Multiple testing and validation.} Within each family of tests, links are validated at a Benjamini–Hochberg false discovery rate of 1\% (Benjamini and Hochberg, 1995). Validation uses 2023–2025 only (10,066 notifications). The 2026 notifications (3,002) are held out: for every link I recompute the expected count from 2026 margins and report the share of links observed above expectation and the pooled ratio of observed to expected counts.
+
+\subsection{Hazard categorization and risk decisions}
+
+Risk categorizations are a modeling choice. Following Stevens, Almeida et al. (2025), who compare diet categorizations for predicting flares of inflammatory bowel disease with the sparse group lasso, I compare hazard categorizations for predicting whether a notification receives a \emph{serious} risk decision. Every model uses product category (33 indicators) and origin country (top 25 and \emph{other}). Hazards enter either as the 28 hazard classes or as 118 named hazards with at least 20 notifications in 2023–2025 (spelling variants merged), plus one indicator per class for its remaining hazards. Four penalized logistic regressions are compared: the lasso on classes, the lasso on names, the group lasso on names grouped by class, and the sparse group lasso (Simon et al., 2013), whose penalty $\lambda\,[\alpha\lVert\beta\rVert_1+(1-\alpha)\sum_g\sqrt{p_g}\,\lVert\beta_g\rVert_2]$, with $\alpha=0.5$, selects classes and, inside each selected class, the hazards that matter. Product and origin indicators are singleton groups. The models are fitted by proximal gradient descent with FISTA acceleration and adaptive restart, implemented for this project and checked against an unpenalized fit in scikit-learn. The penalty is chosen on 2025 with models fitted on 2023–2024; final models are refitted on 2023–2025 and evaluated on 2026 by AUC and log loss, with a paired bootstrap (1,000 resamples) for differences in AUC.
+
+\subsection{Case study: pyrrolizidine alkaloids}
+
+Pyrrolizidine alkaloids (PAs) are plant toxins found mainly in herbs, spices, teas, and herbal infusions. EU maximum levels apply from 1 July 2022 under Commission Regulation (EU) 2020/2040, and products placed on the market before that date could remain until 31 December 2023. For PA notifications I test which origins (within herbs and spices) and which notifying countries are over-represented relative to their overall notifications, with the hypergeometric test and Benjamini–Hochberg correction; compare the share of serious decisions with other hazards in the same product category (Fisher's exact test); and compare the share of PAs among all notifications across years (binomial tests).
+
+\section{Results}
+
+\subsection{Structure of the network (Q1)}
+
+Three hazard classes dominate: pesticide residues (PageRank 0.051), pathogenic micro-organisms (0.049), and mycotoxins (0.034); the next class, heavy metals, has 0.011. Among products, fruits and vegetables (0.113), nuts, nut products and seeds (0.063), and poultry meat (0.043) lead; among origins, Türkiye (0.023) is followed by Poland and India (0.014 each). The heaviest edges are fruits and vegetables to pesticide residues (2,168 notifications), poultry meat to pathogenic micro-organisms (1,414), and nuts to mycotoxins (1,204); on the origin side, Türkiye to fruits and vegetables (1,110) and Poland to poultry meat (661). Products split into two communities by the hazards they share: 15 categories, mostly of animal origin (poultry and other meat, eggs, milk, molluscs, crustaceans), linked to microbiological hazards, and 18 plant-based and processed categories (fruits and vegetables, nuts, spices, cereals), together with fish, linked to chemical hazards.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1.00\textwidth]{fig1_network.png}
+\caption{Two-layer network, top 12 nodes of each type ordered by PageRank. Edge width is proportional to the number of notifications.}
+\end{figure}
+
+\subsection{Stability of the rankings (Q2)}
+
+The top of every ranking is robust. The nine leading hazard classes and the eight leading product categories rank in the top 10 in all 1,000 bootstrap replications, and rankings are stable from year to year (Spearman $\rho$ = 0.922 for 2023–2024, 0.902 for 2024–2025, and 0.936 for 2025–2026). The boundary is not: \emph{novel food} stays in the hazard top 10 in 90.1\% of replications while \emph{biological contaminants} enters in 9.5\%, and \emph{cocoa, coffee and tea} stays in the product top 10 in 94.4\% while \emph{confectionery} enters in 7.3\%. A priority list built from a single ranking should therefore treat its last positions as uncertain.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1.00\textwidth]{fig2_centrality_uncertainty.png}
+\caption{Top 10 product categories and hazard classes: median PageRank and 90\% bootstrap interval (1,000 replications).}
+\end{figure}
+
+\subsection{Links stronger than volume predicts (Q3)}
+
+Table 1 reports the null-model results. Validated links are a minority in every family, and they are the ones that persist: in 2026, 86\% of validated origin–product links and 82\% of validated product–hazard links are again above expectation, with pooled ratios of 3.51 and 2.92, while the links that were not validated fall below expectation (0.66 and 0.48).
+
+\begin{table}[ht]
+\centering\small
+\caption{Null-model validation (hypergeometric tests, Benjamini–Hochberg FDR 1\%) and out-of-sample check on 2026. O/E is the pooled ratio of observed to expected counts, with expectations recomputed from 2026 margins.}
+\begin{tabular}{lcccc}
+\toprule
+Test family & Links & Validated & \multicolumn{2}{c}{Above expectation in 2026}\\
+ & & (2023--2025) & validated & not validated\\
+\midrule
+Origin--product & 970 & 135 & 86\% (O/E 3.51) & 30\% (O/E 0.66)\\
+Product--hazard & 350 & 77 & 82\% (O/E 2.92) & 25\% (O/E 0.48)\\
+Origin--product--hazard & 2,341 & 144 & 75\% (O/E 1.70) & 32\% (O/E 0.94)\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+Several of the largest raw links are explained by volume: Türkiye to nuts (146 notifications, 0.82 of expected), India to fruits and vegetables (111, 0.61), and fruits and vegetables to mycotoxins (498, 1.11) are not over-represented once the margins are taken into account. Smaller links carry specific signals: Ecuador to crustaceans (82 notifications, 33 times expected), Pakistan to cereals (194, 11 times), fish to parasitic infestation (43, 19 times), and cephalopods to heavy metals (24, 18 times).
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=0.80\textwidth]{fig3_validated_links_out_of_sample.png}
+\caption{Out-of-sample check: pooled ratio of observed to expected counts in 2026 for links validated and not validated on 2023–2025. The dashed line marks the null expectation.}
+\end{figure}
+
+\subsection{Coupling between layers}
+
+The coupling test changes the reading of the largest node in the network. Türkiye's fruit and vegetable notifications are the largest origin–product link and fruits and vegetables are most often notified for pesticide residues, so a reading by layer suggests pesticides. Conditional on the product, however, the triple Türkiye, fruits and vegetables, pesticide residues is below expectation (387 notifications against 541 expected, ratio 0.72), while the triple with mycotoxins is 2.57 times expected (416 against 162). Both results hold in the held-out year: 182 mycotoxin notifications against 70 expected in 2026, and 84 pesticide notifications against 162 expected. Other validated triples include China, poultry meat, pesticide residues (26 notifications, 17 times expected), Vietnam, fish, residues of veterinary medicinal products (20, 12 times), Peru, fruits and vegetables, heavy metals (22, 9 times), and Indonesia, herbs and spices, mycotoxins (27, 8 times). Across all triples, validated combinations are above expectation in 2026 in 75\% of cases, against 32\% for the rest.
+
+\subsection{Hazard categorization and risk decisions (Q4)}
+
+Named hazards predict risk decisions better than hazard classes out of sample (Table 2). The gain in AUC on 2026 is 0.041 for the lasso on names (90\% bootstrap interval 0.030 to 0.051) and of the same size for the group and sparse group lasso, and log loss falls from 0.590 to 0.553. The group structure does not add accuracy here; its value is interpretability, since the sparse group lasso reports which classes matter (22 of 28) and which hazards within them.
+
+The reason is that hazards within a class are treated very differently. Among pathogens, \emph{Salmonella} Enteritidis and Typhimurium have the largest coefficients (2.55 and 2.53 on the log-odds scale), while \emph{Salmonella} Infantis is shrunk to zero and norovirus is negative ($-$1.58). In the raw data, 83\% of the 321 Enteritidis notifications and 85\% of the 108 Typhimurium notifications are classified as serious, against 30\% of the 351 Infantis notifications, although 82\% to 94\% of each are in poultry meat. This matches EU law: Enteritidis and Typhimurium are the serovars with a food-safety criterion for fresh poultry meat (absence in 25 g, Regulation (EC) No 2073/2005, row 1.28, introduced by Regulation (EU) No 1086/2011). A model built on hazard classes merges hazards that regulators treat differently, so the level of categorization should be chosen and validated for the decision the model supports.
+
+\begin{table}[ht]
+\centering\footnotesize\setlength{\tabcolsep}{4pt}
+\caption{Prediction of serious risk decisions, trained on 2023–2025 and evaluated on 2026 (3,002 notifications). Hazard features selected out of 28 classes or 146 named-hazard indicators.}
+\begin{tabular}{llcccc}
+\toprule
+Model & Hazard level & Selected & AUC & Log loss & AUC gain vs.\ classes\\
+ & & features & 2026 & 2026 & (90\% interval)\\
+\midrule
+Lasso & 28 classes & 18 of 28 & 0.753 & 0.590 & --\\
+Lasso & Named hazards & 118 of 146 & 0.793 & 0.554 & +0.041 (0.030, 0.051)\\
+Group lasso & Named, by class & 140 of 146 & 0.793 & 0.553 & +0.040 (0.030, 0.049)\\
+Sparse group lasso & Named, by class & 132 of 146 & 0.794 & 0.553 & +0.041 (0.031, 0.051)\\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1.00\textwidth]{fig4_hazard_categorization.png}
+\caption{Left: out-of-sample AUC by hazard categorization. Right: sparse group lasso coefficients for named pathogens and mycotoxins.}
+\end{figure}
+
+\subsection{Case study: pyrrolizidine alkaloids}
+
+There are 224 PA notifications: 170 in herbs and spices, 31 in cocoa, coffee and tea, and 8 in food supplements. Within herbs and spices, Türkiye is strongly over-represented (76 of its 127 notifications concern PAs, 3.5 times the expected share, $q<0.001$), as are Poland (2.9 times) and Greece (9 of 9), while India is under-represented (0.4 times) because its herbs and spices are notified for other hazards. Belgium is the first notifying country for PAs, with 34 notifications, 2.4 times what its overall volume implies ($q<0.001$), followed in relative terms by Ireland (4.8 times) and Poland (2.3 times); Germany, France, the Netherlands, and Italy notify PAs less often than their volume implies. PA notifications are classified as serious more often than other hazards in the same category: 65\% against 56\% in herbs and spices (Fisher $p=$ 0.03) and 61\% against 36\% in cocoa, coffee and tea ($p=$ 0.01).
+
+The end of the transition period did not change the share of PA notifications (2.1\% in 2023 against 1.6\% from 2024, $p=$ 0.10). The fall is concentrated in 2026: 2.4 PA notifications per month against 5.2 to 6.1 in 2023–2025, or 0.8\% of all notifications against 2.0\% ($p<0.001$). RASFF alone cannot tell whether this reflects lower contamination, fewer controls, or changes in sampling, which is where occurrence and consumption data become necessary.
+
+\begin{figure}[ht]
+\centering
+\includegraphics[width=1.00\textwidth]{fig5_pyrrolizidine_alkaloids.png}
+\caption{Left: PA notifications per month by product category (2026 up to 21 October). Right: PA notifications by notifying country relative to the expectation from its overall notifications; red marks $q<0.05$.}
+\end{figure}
+
+\section{Limitations}
+
+RASFF notifications record what is inspected and reported, not the prevalence of contamination; central nodes partly reflect inspection intensity, including reinforced border controls on specific products and origins. The null models condition on observed margins, so they separate links from the volume of their endpoints but do not correct for inspection effort itself, and the hypergeometric tests treat links as separate tests with fixed margins, without modeling overdispersion. Notifications with several origins contribute one record per origin. The network is built at the hazard-class level; Section 4.5 shows that this level merges hazards that regulators treat differently. Risk decisions are taken by national authorities with information not in the public export, such as measured concentrations and distribution, so the models in Section 4.5 describe how decisions relate to categories, not why they were taken. Counts do not include consumption or exposure, so this is a screening and prioritization exercise, not a risk assessment, and 2026 is a partial year.
+
+\section{Extensions}
+
+Four extensions follow directly. First, replace link-by-link tests with models estimated jointly across layers, such as weighted stochastic block models or latent space models for multi-layer networks, so that the dependence between layers enters the model directly. Second, normalize by inspection effort and trade volume to separate surveillance intensity from risk. Third, add an exposure layer linking product nodes to occurrence data (measured concentrations) and consumption data by population group, as held by national institutes such as Sciensano, so that priorities are weighted by how much of each hazard a population actually ingests; pyrrolizidine alkaloids in herbs and teas are a natural first case. Fourth, carry the uncertainty of every network quantity through to the final priority list, validated over time, so that risk managers can see which priorities are stable.
+
+\paragraph{Code and reproducibility.} All steps (cleaning, network construction, centrality, bootstrap, null models, hazard categorization models with a sparse group lasso solver, the case study, and figures) are in nine Python files at \url{https://github.com/GeneTheStoic/rasff-network} and reproduce every number in this report from the public RASFF export.
+
+\paragraph{Use of AI tools.} Claude (Anthropic) was used as an assistant for the Python implementation.
+
+\section*{References}
+\small
+\begin{list}{}{\setlength{\leftmargin}{1.5em}\setlength{\itemindent}{-1.5em}\setlength{\itemsep}{0.2em}}
+\item Benjamini, Y., and Hochberg, Y. (1995). Controlling the false discovery rate: a practical and powerful approach to multiple testing. \emph{Journal of the Royal Statistical Society: Series B}, 57(1), 289–300.
+\item Blondel, V. D., Guillaume, J.-L., Lambiotte, R., and Lefebvre, E. (2008). Fast unfolding of communities in large networks. \emph{Journal of Statistical Mechanics: Theory and Experiment}, P10008.
+\item Brin, S., and Page, L. (1998). The anatomy of a large-scale hypertextual Web search engine. \emph{Computer Networks and ISDN Systems}, 30(1–7), 107–117.
+\item Efron, B., and Tibshirani, R. J. (1993). \emph{An Introduction to the Bootstrap}. Chapman and Hall.
+\item European Commission (2005). Commission Regulation (EC) No 2073/2005 of 15 November 2005 on microbiological criteria for foodstuffs. \emph{Official Journal of the European Union}, L 338, 1–26.
+\item European Commission (2011). Commission Regulation (EU) No 1086/2011 of 27 October 2011 amending Annex II to Regulation (EC) No 2160/2003 and Annex I to Regulation (EC) No 2073/2005 as regards salmonella in fresh poultry meat.
+\item European Commission (2020). Commission Regulation (EU) 2020/2040 of 11 December 2020 amending Regulation (EC) No 1881/2006 as regards maximum levels of pyrrolizidine alkaloids in certain foodstuffs.
+\item European Commission. RASFF Window, Rapid Alert System for Food and Feed. \url{https://webgate.ec.europa.eu/rasff-window/screen/search} (accessed 22 October 2026).
+\item Simon, N., Friedman, J., Hastie, T., and Tibshirani, R. (2013). A sparse-group lasso. \emph{Journal of Computational and Graphical Statistics}, 22(2), 231–245.
+\item Stevens, C. L., Almeida, R. J., et al. (2025). Exploring diet categorizations and their influence on flare prediction in inflammatory bowel disease, using the Sparse Grouped Least Absolute Shrinkage and Selection Operator method. \emph{Clinical Nutrition}, 47, 212–226.
+\end{list}
+\end{document}

@@ -54,7 +54,7 @@ def main():
 
     no_hazard = (df["hazard_pairs"].str.len() == 0).sum()
     df = df[df["hazard_pairs"].str.len() > 0]
-    print(f"Dropped {no_hazard:,} notifications without a coded hazard (e.g. labelling-only cases).")
+    print(f"Dropped {no_hazard:,} notifications without a coded hazard (e.g. labeling-only cases).")
 
     df = df.explode("origin").explode("hazard_pairs")
     df["origin"] = df["origin"].str.strip()

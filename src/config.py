@@ -17,7 +17,7 @@ COL_NOTIFYING = "notifying_country"
 COL_RISK = "risk_decision"
 COL_HAZARDS = "hazards"          # e.g. "Aflatoxin B1 - {mycotoxins},aflatoxin total - {mycotoxins}"
 
-KEEP_TYPES = ["food"]            # analyse food notifications only (drop feed, food contact material, ...)
+KEEP_TYPES = ["food"]            # analyze food notifications only (drop feed, food contact material, ...)
 HAZARD_LEVEL = "hazard_class"    # "hazard_class" (e.g. mycotoxins, 28 classes) or "hazard_name" (e.g. aflatoxin B1)
 
 N_BOOTSTRAP = 1000               # bootstrap replications for uncertainty

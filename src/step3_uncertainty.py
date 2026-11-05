@@ -35,7 +35,7 @@ def bootstrap(df: pd.DataFrame, n_boot: int, seed: int) -> pd.DataFrame:
     return pd.concat(records, ignore_index=True)
 
 
-def summarise(boot: pd.DataFrame, n_boot: int) -> pd.DataFrame:
+def summarize(boot: pd.DataFrame, n_boot: int) -> pd.DataFrame:
     s = boot.groupby(["node", "kind", "name"]).agg(
         pagerank_median=("pagerank", "median"),
         pagerank_p05=("pagerank", lambda x: np.quantile(x, 0.05)),
@@ -63,7 +63,7 @@ def main():
     df = pd.read_csv(CLEAN_FILE, parse_dates=["date"])
     print(f"Running {N_BOOTSTRAP} bootstrap replications...")
     boot = bootstrap(df, N_BOOTSTRAP, SEED)
-    summary = summarise(boot, N_BOOTSTRAP)
+    summary = summarize(boot, N_BOOTSTRAP)
     summary.to_csv(RESULTS / "centrality_bootstrap.csv", index=False)
     for kind in ["origin", "product", "hazard"]:
         print(f"\n{kind.upper()}: median PageRank [90% interval], share of replications in top {TOP_K}")
